@@ -15,6 +15,7 @@ const IntervieweePage = () => {
   const dispatch = useDispatch();
   const currentCandidate = useSelector((state) => state.candidates.currentCandidate);
   const session = useSelector((state) => state.session);
+  const candidates = useSelector((state) => state.candidates.candidates);
   
   const [chatMessages, setChatMessages] = useState([]);
   const [pendingField, setPendingField] = useState(null);
@@ -200,8 +201,7 @@ const IntervieweePage = () => {
     setIsProcessing(true);
 
     try {
-      // Get updated candidate from store
-      const candidates = useSelector.getState?.()?.candidates?.candidates || [];
+      // Get updated candidate from store - FIXED
       const candidate = candidates.find(c => c.id === currentCandidate.id) || currentCandidate;
       
       const summary = await generateSummary(candidate.chatHistory);
@@ -233,6 +233,7 @@ const IntervieweePage = () => {
       dispatch(endSession());
       setIsProcessing(false);
     } catch (error) {
+      console.error('Failed to generate summary:', error);
       message.error('Failed to generate summary');
       setIsProcessing(false);
     }
