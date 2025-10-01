@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import IntervieweePage from './pages/IntervieweePage';
+import InterviewerPage from './pages/InterviewerPage';
+import { Tabs } from 'antd';
+import { UserOutlined, TeamOutlined } from '@ant-design/icons';
+import './App.css';
+import LoginPage from './pages/Login';
 
-function App() {
-  const [count, setCount] = useState(0)
+const InterviewLayout = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const items = [
+    {
+      key: 'interviewee',
+      children: <IntervieweePage />
+    },
+    {
+      key: 'interviewer',
+      children: <InterviewerPage />
+    }
+  ];
+
+  const activeKey = location.pathname === '/interviewer' ? 'interviewer' : 'interviewee';
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app-container">
+      <header className="app-header">
+        <h1><a style={{ textDecoration: 'none', color: "white" }} href="/">InterviewForge</a></h1>
+        <p>AI-Powered Interview Simulator for Full-Stack Developers</p>
+      </header>
+      <Tabs 
+        activeKey={activeKey}
+        items={items}
+        size="large"
+        centered
+        className="main-tabs"
+        onChange={(key) => {
+          navigate(key === 'interviewer' ? '/interviewer' : '/interviewee');
+        }}
+      />
+    </div>
+  );
+};
 
-export default App
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/interviewee" element={<InterviewLayout />} />
+        <Route path="/interviewer" element={<InterviewLayout />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;

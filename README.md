@@ -1,16 +1,32 @@
-# React + Vite
+# InterviewForge 🎯
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AI-Powered Interview Simulator for Full-Stack Developers**
 
-Currently, two official plugins are available:
+InterviewForge is a modern, production-ready React application that simulates technical interviews for React/Node.js full-stack developer roles using Google's Gemini AI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Resume Upload & Parsing**: Upload PDF/DOCX resumes with automatic data extraction
+- **AI-Generated Questions**: 6 questions (2 easy, 2 medium, 2 hard) generated via Gemini API
+- **Real-Time Interviews**: Timed questions with countdown timers
+- **Intelligent Scoring**: AI-powered answer evaluation (0-10 scale)
+- **Dashboard**: Searchable, sortable candidate management system
+- **Persistence**: Resume interrupted interviews with local storage
+- **Responsive Design**: Mobile-friendly UI with Ant Design
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React 18.3, Vite 5, Redux Toolkit 2.x
+- **UI Library**: Ant Design 5.x
+- **State Management**: Redux with Redux Persist & LocalForage
+- **AI**: Google Gemini 1.5 Flash API
+- **PDF Processing**: pdfjs-dist 4.x, mammoth
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Prerequisites
+
+- Node.js 18+ and npm 9+
+- Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+
+## Installation
+
+### 1. Create Project Directory
