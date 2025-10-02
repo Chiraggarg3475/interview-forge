@@ -6,7 +6,7 @@ import sessionReducer from './slices/sessionSlice';
 
 // Configure localforage
 localforage.config({
-  name: 'InterviewForge',
+  name: 'Crisp',
   storeName: 'interview_data',
   description: 'Interview data storage'
 });

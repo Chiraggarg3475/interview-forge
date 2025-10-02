@@ -1,14 +1,14 @@
-# InterviewForge
+# Crisp
 
 **AI-Powered Full-Stack Interview Simulator**
 
-InterviewForge is a cutting-edge platform to simulate technical interviews for **React / Node.js developer** roles. It offers end-to-end functionality — from resume parsing to AI question generation, timed responses, and in-depth performance analytics.
+Crisp is a cutting-edge platform to simulate technical interviews for **React / Node.js developer** roles. It offers end-to-end functionality — from resume parsing to AI question generation, timed responses, and in-depth performance analytics.
 
 ---
 
 ## 🌐 Live Demo & Repo
 
-* **Live Deployment**: [InterviewForge on Vercel](https://interview-forge-ten.vercel.app/)
+* **Live Deployment**: [Crisp on Vercel](https://interview-forge-ten.vercel.app/)
 * **Source Code**: [GitHub Repository](https://github.com/Chiraggarg3475/interview-forge)
 
 ---

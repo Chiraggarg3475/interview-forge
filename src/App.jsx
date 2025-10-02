@@ -28,7 +28,7 @@ const InterviewLayout = () => {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1><a style={{ textDecoration: 'none', color: "white" }} href="/">InterviewForge</a></h1>
+        <h1><a style={{ textDecoration: 'none', color: "white" }} href="/">Crisp</a></h1>
         <p>AI-Powered Interview Simulator for Full-Stack Developers</p>
       </header>
       <Tabs 

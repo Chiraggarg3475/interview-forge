@@ -39,7 +39,7 @@ const LandingPage = () => {
           WebkitTextFillColor: 'transparent',
           fontWeight: 800
         }}>
-          InterviewForge
+          Crisp
         </Title>
         <Paragraph style={{ 
           fontSize: '1.2rem', 
